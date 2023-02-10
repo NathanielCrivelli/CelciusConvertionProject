@@ -25,21 +25,73 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        celciusInput = new javax.swing.JTextField();
+        celciusLabel = new javax.swing.JLabel();
+        convertButton = new javax.swing.JButton();
+        fahrenhiteLabel = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CelciusConverterGUI");
+
+        celciusInput.setText(" ");
+        celciusInput.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                celciusInputActionPerformed(evt);
+            }
+        });
+
+        celciusLabel.setText("Celcius");
+
+        convertButton.setText("CONVERT");
+        convertButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertButtonActionPerformed(evt);
+            }
+        });
+
+        fahrenhiteLabel.setText("Fahrenhite");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(celciusInput)
+                    .addComponent(convertButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(celciusLabel)
+                    .addComponent(fahrenhiteLabel))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(celciusInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(celciusLabel))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fahrenhiteLabel)
+                    .addComponent(convertButton))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
+        int tempFahr = (int)((Double.parseDouble(celciusInput.getText()))
+            * 1.8 + 32);
+    fahrenhiteLabel.setText(tempFahr + " Fahrenheit");
+    }//GEN-LAST:event_convertButtonActionPerformed
+
+    private void celciusInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celciusInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_celciusInputActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +129,9 @@ public class CelsiusConverterGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField celciusInput;
+    private javax.swing.JLabel celciusLabel;
+    private javax.swing.JButton convertButton;
+    private javax.swing.JLabel fahrenhiteLabel;
     // End of variables declaration//GEN-END:variables
 }
